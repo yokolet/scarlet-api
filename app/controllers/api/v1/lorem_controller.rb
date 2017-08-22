@@ -3,7 +3,7 @@ class Api::V1::LoremController < ApplicationController
     lorem = LoremIpsum.random
     render json: {
       status: 'SUCCESS',
-      message: 'Current time on the server',
+      message: 'Random text',
       data: lorem}, status: :ok
   end
 end
