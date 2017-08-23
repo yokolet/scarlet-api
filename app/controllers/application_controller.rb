@@ -6,6 +6,8 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate
+    puts ENV['THREESCALE_SERVICE_TOKEN']
+    puts ENV['THREESCALE_SERVICE_ID']
     response = create_client.authrep(
       service_token: ENV['THREESCALE_SERVICE_TOKEN'],
       service_id: ENV['THREESCALE_SERVICE_ID'],
