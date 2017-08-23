@@ -8,8 +8,8 @@ class ApplicationController < ActionController::API
 
   def authenticate
     response = create_client.authrep(
-      service_token: params['THREESCALE_SERVICE_TOKEN'],
-      service_id: params['THREESCALE_SERVICE_ID'],
+      service_token: ENV['THREESCALE_SERVICE_TOKEN'],
+      service_id: ENV['THREESCALE_SERVICE_ID'],
       user_key: params['USER_KEY'],
       usage: {'lorem_hits' => 1})
     if response.success?
