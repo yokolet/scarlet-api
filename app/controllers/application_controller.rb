@@ -14,9 +14,12 @@ class ApplicationController < ActionController::API
       user_key: params['user_key'],
       usage: {'lorem_hits' => 1})
     if response.success?
+      @authrep_status = true
       return true
     else
       puts "#{response.error_message}"
+      @authrep_status = false
+      head(401)
       return false
     end
   end
