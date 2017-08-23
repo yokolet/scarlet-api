@@ -17,6 +17,7 @@ class ApplicationController < ActionController::API
       return true
     else
       puts "#{response.error_message}"
+      return false
     end
   end
 end
